@@ -15,7 +15,7 @@ const db = mysql.createConnection({
 // CHECK CONNECTION
 db.connect((err) => {
   if (err) throw err;
-  console.log("MySQL Connected...");
+  console.log("MySQL Connected in Backend Database Connected.....");
 });
 
 // ---------------------------
@@ -36,7 +36,7 @@ app.post("/users", (req, res) => {
     });
 
     res.json({ 
-      message: "User added", 
+      message: "User added Sucessfully......", 
       id: result.insertId,
       name,
       email
