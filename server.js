@@ -27,10 +27,23 @@ app.post("/users", (req, res) => {
   const sql = "INSERT INTO users (name, email) VALUES (?, ?)";
   db.query(sql, [name, email], (err, result) => {
     if (err) throw err;
-    res.json({ message: "User added", id: result.insertId });
-    console.log({result});
+
+    // Console log all information
+    console.log({
+      id: result.insertId,   
+      name: name,
+      email: email
+    });
+
+    res.json({ 
+      message: "User added", 
+      id: result.insertId,
+      name,
+      email
+    });
   });
 });
+
 
 // ---------------------------
 // READ USERS (GET)
