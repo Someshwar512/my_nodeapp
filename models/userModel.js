@@ -7,6 +7,7 @@ exports.createUser = (name, email, callback) => {
 };
 
 // GET ALL USERS
+
 exports.getUsers = (callback) => {
   const sql = "SELECT * FROM users";
   db.query(sql, callback);
@@ -24,7 +25,7 @@ exports.updateUser = (id, name, email, callback) => {
   db.query(sql, [name, email, id], callback);
 };
 
-// DELETE USER
+// DELETE USER Implemetaions
 exports.deleteUser = (id, callback) => {
   const sql = "DELETE FROM users WHERE id = ?";
   db.query(sql, [id], callback);
