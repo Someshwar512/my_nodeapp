@@ -1,13 +1,14 @@
 const User = require("../models/userModel");
 
 // CREATE USER
-exports.createUser = (req, res) => {
+exports.createUser = (req, res) => 
+    {
   const { name, email } = req.body;
 
   User.createUser(name, email, (err, result) => {
     if (err) throw err;
 
-    res.json({
+        res.json({
       message: "User added successfully",
       id: result.insertId,
       name,
