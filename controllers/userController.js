@@ -9,7 +9,7 @@ exports.createUser = (req, res) =>
     if (err) throw err;
 
         res.json({
-      message: "User added successfully",
+      message: "User added successfully.....",
       id: result.insertId,
       name,
       email
