@@ -1,6 +1,6 @@
 const db = require("../config/db");
 
-// CREATE USER
+// CREATE USER Api
 exports.createUser = (name, email, callback) => {
   const sql = "INSERT INTO users (name, email) VALUES (?, ?)";
   db.query(sql, [name, email], callback);
